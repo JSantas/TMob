@@ -1,0 +1,5 @@
+username = 'test'
+password = 'password'
+dsn = 'host/mobile'
+port = '1111'
+encoding = 'UTF-8'
