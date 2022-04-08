@@ -24,7 +24,7 @@ async def return_billings(client_id: str):
                      f'where (a_party = {phone_number} or b_party = {phone_number}) and ' \
                      f'_timestamp > 1000 * to_unix_timestamp(CURRENT_TIMESTAMP - interval 3 DAYS)'
         dataframe = pd.read_sql(hive_query, hive_conn)
-        return dataframe.to_json
+        return {'result' : dataframe.to_json}
     except:
         return {'message' : 'Error'}
     finally:
